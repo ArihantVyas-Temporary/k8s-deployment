@@ -1,0 +1,7 @@
+    ▪ Using image docker.io/kubernetesui/dashboard:v2.7.0
+    ▪ Using image docker.io/kubernetesui/metrics-scraper:v1.0.8
+💡  Some dashboard features require the metrics-server addon. To enable all features please run:
+
+	minikube -p cluster2 addons enable metrics-server
+
+http://127.0.0.1:38883/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/

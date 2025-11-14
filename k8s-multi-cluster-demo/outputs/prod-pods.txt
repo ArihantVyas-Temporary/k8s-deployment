@@ -1,0 +1,5 @@
+NAME                        READY   STATUS             RESTARTS       AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+backend-85d4bc84df-5qqv2    1/1     Running            0              27m   10.244.0.6   cluster2   <none>           <none>
+backend-85d4bc84df-z4nzk    1/1     Running            0              27m   10.244.0.5   cluster2   <none>           <none>
+frontend-69f685c6bb-4w8k7   0/1     CrashLoopBackOff   10 (52s ago)   27m   10.244.0.8   cluster2   <none>           <none>
+frontend-69f685c6bb-8h745   0/1     CrashLoopBackOff   10 (28s ago)   27m   10.244.0.7   cluster2   <none>           <none>
