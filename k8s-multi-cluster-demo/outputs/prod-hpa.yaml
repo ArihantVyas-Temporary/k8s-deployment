@@ -1,0 +1,44 @@
+apiVersion: v1
+items:
+- apiVersion: autoscaling/v2
+  kind: HorizontalPodAutoscaler
+  metadata:
+    creationTimestamp: "2025-11-14T14:22:49Z"
+    name: backend
+    namespace: prod
+    resourceVersion: "2218"
+    uid: a0472ce1-54d5-4e7a-a492-bc7af4dfba26
+  spec:
+    maxReplicas: 5
+    metrics:
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 60
+          type: Utilization
+      type: Resource
+    minReplicas: 2
+    scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deployment
+      name: backend
+  status:
+    conditions:
+    - lastTransitionTime: "2025-11-14T14:23:04Z"
+      message: the HPA controller was able to get the target's current scale
+      reason: SucceededGetScale
+      status: "True"
+      type: AbleToScale
+    - lastTransitionTime: "2025-11-14T14:23:04Z"
+      message: 'the HPA was unable to compute the replica count: failed to get cpu
+        utilization: missing request for cpu in container backend of Pod backend-85d4bc84df-5qqv2'
+      reason: FailedGetResourceMetric
+      status: "False"
+      type: ScalingActive
+    currentMetrics:
+    - type: ""
+    currentReplicas: 2
+    desiredReplicas: 0
+kind: List
+metadata:
+  resourceVersion: ""
